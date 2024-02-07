@@ -310,4 +310,13 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+
+  # This Retrieves the Google OAuth2 client ID from the Rails credentials.
+  # Rails credentials are a way to securely store sensitive information,
+  # such as API keys or secrets, outside of your source code.
+  # The dig method is used to access nested values in the credentials
+  config.omniauth :google_oauth2,
+          Rails.application.credentials.dig(:google_oauth_client_id),
+          Rails.application.credentials.dig(:google_oauth_client_secret)
+
 end
