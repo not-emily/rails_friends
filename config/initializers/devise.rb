@@ -315,8 +315,11 @@ Devise.setup do |config|
   # Rails credentials are a way to securely store sensitive information,
   # such as API keys or secrets, outside of your source code.
   # The dig method is used to access nested values in the credentials
-  config.omniauth :google_oauth2,
-          Rails.application.credentials.dig(:google_oauth_client_id),
-          Rails.application.credentials.dig(:google_oauth_client_secret)
+  # config.omniauth :google_oauth2,
+  #         Rails.application.credentials.dig(:google_oauth_client_id),
+  #         Rails.application.credentials.dig(:google_oauth_client_secret)
+  
+  config.omniauth :google_oauth2, Figaro.env.google_oauth_client_id, Figaro.env.google_oauth_client_secret
+  # config.omniauth :google_oauth2, ENV['GOOGLE_OAUTH_CLIENT_ID'], ENV['GOOGLE_OAUTH_CLIENT_SECRET']
 
 end

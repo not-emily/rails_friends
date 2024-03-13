@@ -35,3 +35,6 @@
 /config/master.key
 
 *.swp
+*.DS_Store
+
+application.yml

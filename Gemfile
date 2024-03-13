@@ -48,6 +48,9 @@ gem "bootsnap", require: false
 gem "devise"
 gem "omniauth"
 gem "omniauth-google-oauth2"
+gem "omniauth-rails_csrf_protection", "~> 1.0"
+
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 
 group :development, :test do
